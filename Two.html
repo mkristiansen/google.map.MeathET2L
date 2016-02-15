@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <script src = "http://maps.googleapis.com/maps/api/js"></script>
+
+      <script>
+         function loadMap() {
+
+            var llNETNS = new google.maps.LatLng(53.6406643, -6.7056351,17)
+
+            var mapOptions = {
+               center:llNETNS,
+               zoom:13
+            }
+
+            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+
+            var iconNetns = {
+              url: "./scripts/img/Educate Together Logo.jpg",
+              scaledSize: {width:25, height:25}// etc..
+            };
+
+            var marker = new google.maps.Marker({
+               position: llNETNS,
+               map: map,
+               animation:google.maps.Animation.DROP,
+               icon: iconNetns
+            });
+         }
+      </script>
+
+   </head>
+
+   <body onload = "loadMap()">
+      <div id = "sample" style = "width:580px; height:400px;"></div>
+   </body>
+
+</html>
